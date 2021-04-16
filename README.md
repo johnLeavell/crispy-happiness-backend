@@ -58,3 +58,18 @@ commands to create a new Rails API:  rails new water-backend --api --database=po
 
 added to gemfile: uncommented rack coors, active_model_serializers
 
+rails g model Location name:string
+
+rails g model Result date:string time:string temp:string trub:string tryp_ppb:string tryp_temp_corr:string coil_coll_100ml:string
+
+rails g model LocationResult result:references location:references
+
+rails db:migrate
+
+next we'll add the controellers:
+rails g controller api/v1/LocationResults
+rails g controller api/v1/Results
+rails g controller api/v1/Locations
+
+
+Started seeding data but unable to complete due to lack of internet, seeded locations, cannot seed results because I left out the stage(depth) in the schema.  
